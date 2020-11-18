@@ -351,6 +351,8 @@ GameObject:
   - component: {fileID: 4401810906721542120}
   - component: {fileID: 4401810906652776370}
   - component: {fileID: 8830272196135531565}
+  - component: {fileID: 5403653118776221582}
+  - component: {fileID: 114006941102344868}
   m_Layer: 0
   m_Name: Animal_Cow_White
   m_TagString: Untagged
@@ -415,6 +417,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de067223a435bb846a06f86f7ce89085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &5403653118776221582
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401810906711855816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.955251, y: 30.796955, z: 48.78788}
+  m_Center: {x: -0.030304324, y: 15.297134, z: 0.5632612}
+--- !u!114 &114006941102344868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401810906711855816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f972b203528a50840ad285f2461ec617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4401810906711856200
