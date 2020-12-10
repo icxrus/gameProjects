@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed;
     public float JumpHeight = 1.2f;
 
-    float gravity = 10;
+    float gravity = 1;
     bool OnGround = false;
 
 
@@ -48,9 +48,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(transform.up * 20 * JumpHeight * Time.deltaTime);
-
+            rb.AddForce(Vector3.up * 2000 * JumpHeight * Time.deltaTime, ForceMode.Impulse);
         }
+
+        
+
 
 
 
