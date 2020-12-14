@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed;
     public float JumpHeight = 1.2f;
 
-    float gravity = 100;
-    bool OnGround = false;
+    private float gravity = 500;
+    private bool OnGround = false;
 
 
     float distanceToGround;
@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
+
+        // Get input
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
 
@@ -51,12 +53,23 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * 200 * JumpHeight * Time.deltaTime, ForceMode.Impulse);
         }
 
+        // Speed boost
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 6;
+        }
+        else
+        {
+            speed = 4;
+        }
         
+     
 
 
 
 
-        //GroundControl
+        //Ground Control
 
         RaycastHit hit = new RaycastHit();
         if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
