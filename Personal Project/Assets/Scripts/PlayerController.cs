@@ -12,8 +12,9 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float turnSpeed;
     public float JumpHeight = 1.2f;
+    public float softening;
 
-    private float gravity = 500;
+    private float gravity = 100;
     private bool OnGround = false;
 
 
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * 200 * JumpHeight * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * 350 * JumpHeight * Time.deltaTime, ForceMode.Impulse);
         }
 
         // Speed boost
@@ -104,7 +105,7 @@ public class PlayerController : MonoBehaviour
         //
 
         Quaternion toRotation = Quaternion.FromToRotation(transform.up, Groundnormal) * transform.rotation;
-        transform.rotation = toRotation;
+        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, softening * Time.deltaTime);
 
 
 
