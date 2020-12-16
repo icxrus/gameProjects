@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Planet
   - Camera
+  - Human
   layers:
   - Default
   - TransparentFX

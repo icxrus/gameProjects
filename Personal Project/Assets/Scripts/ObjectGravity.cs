@@ -12,6 +12,7 @@ public class ObjectGravity : MonoBehaviour
 
     float gravity = 10;
     bool OnGround = false;
+    float speed = 50;
 
 
     float distanceToGround;
@@ -24,7 +25,7 @@ public class ObjectGravity : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
+        Planet = GameObject.Find("Planet Center");
     }
 
     // Update is called once per frame
@@ -64,12 +65,25 @@ public class ObjectGravity : MonoBehaviour
 
         }
 
-        //
 
         Quaternion toRotation = Quaternion.FromToRotation(transform.up, Groundnormal) * transform.rotation;
         transform.rotation = toRotation;
 
 
+    }
 
+
+    // Throws the object in a random direction on collision with player
+    private void OnCollisionEnter(Collision dataFromCollision)
+    {
+        if (dataFromCollision.gameObject.name == "Player")
+        {
+            Vector3 direction = new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f));
+            Vector3 newVelocity = speed * direction;
+            transform.GetComponent<Rigidbody>().velocity = newVelocity;
+
+            // Destroy object after 2 seconds
+            Object.Destroy(gameObject, 2.0f);
+        }
     }
 }

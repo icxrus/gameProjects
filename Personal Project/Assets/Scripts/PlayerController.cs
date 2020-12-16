@@ -29,8 +29,12 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Get rigidbody
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        // Lock cursor to center of screen
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -42,6 +46,7 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
 
+        // Movement
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
         transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
 
@@ -51,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * 350 * JumpHeight * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * 200 * JumpHeight * Time.deltaTime, ForceMode.Impulse);
         }
 
         // Speed boost
@@ -64,13 +69,14 @@ public class PlayerController : MonoBehaviour
         {
             speed = 4;
         }
-        
-     
+
+        // Play area
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -5f, 5f), transform.position.y, transform.position.z);
 
 
 
 
-        //Ground Control
+        //Ground control
 
         RaycastHit hit = new RaycastHit();
         if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
@@ -92,7 +98,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        //GRAVITY and ROTATION
+        //Gravity and rotation
 
         Vector3 gravDirection = (transform.position - Planet.transform.position).normalized;
 
@@ -102,7 +108,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        //
+        // Softening for gravity
 
         Quaternion toRotation = Quaternion.FromToRotation(transform.up, Groundnormal) * transform.rotation;
         transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, softening * Time.deltaTime);
