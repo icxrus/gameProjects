@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
     public float turnSpeed;
-    public float JumpHeight = 1.2f;
     public float softening;
 
     private float gravity = 100;
@@ -52,12 +51,6 @@ public class PlayerController : MonoBehaviour
 
 
 
-        //Jump
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(Vector3.up * 200 * JumpHeight * Time.deltaTime, ForceMode.Impulse);
-        }
 
         // Speed boost
 
