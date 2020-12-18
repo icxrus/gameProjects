@@ -9,9 +9,9 @@ public class PlayerController : MonoBehaviour
     public GameObject PlayerPlaceholder;
 
 
-    public float speed;
-    public float turnSpeed;
-    public float softening;
+    private float speed = 4;
+    private float turnSpeed = 40;
+    private float softening = 4;
 
     private float gravity = 100;
     private bool OnGround = false;
