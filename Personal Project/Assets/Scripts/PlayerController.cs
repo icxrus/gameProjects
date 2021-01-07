@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
 
-    // Start is called before the first frame update
     void Start()
     {
         // Get rigidbody
@@ -34,9 +33,11 @@ public class PlayerController : MonoBehaviour
 
         // Lock cursor to center of screen
         Cursor.lockState = CursorLockMode.Locked;
+
+        // Set the Planet center  point
+        Planet = GameObject.Find("Planet Center");
     }
 
-    // Update is called once per frame
     void Update()
     {
 

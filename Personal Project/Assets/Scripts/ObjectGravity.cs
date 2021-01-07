@@ -12,7 +12,7 @@ public class ObjectGravity : MonoBehaviour
 
     float gravity = 10;
     bool OnGround = false;
-    float speed = 50;
+    float speed = 100;
 
 
     float distanceToGround;
@@ -21,14 +21,14 @@ public class ObjectGravity : MonoBehaviour
 
     private Rigidbody rb;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Planet = GameObject.Find("Planet Center");
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
