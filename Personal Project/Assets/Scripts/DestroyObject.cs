@@ -9,6 +9,6 @@ public class DestroyObject : MonoBehaviour
     void Update()
     {
         // Destroy the object
-        Destroy(gameObject, 7);
+        Destroy(gameObject, 9);
     }
 }

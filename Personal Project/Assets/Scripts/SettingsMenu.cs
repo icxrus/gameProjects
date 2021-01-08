@@ -15,6 +15,7 @@ public class SettingsMenu : MonoBehaviour
     public Dropdown aaDropdown;
     public Slider volumeSlider;
     public Slider slider;
+    public GameObject UI;
     Resolution[] resolutions;
 
     // Start is called before the first frame update
@@ -40,14 +41,16 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.RefreshShownValue();
         LoadSettings(currentResolutionIndex);
+        slider.value = PlayerPrefs.GetFloat("MasterVol", 0.75f);
+        Scene scene = SceneManager.GetActiveScene();
 
-        
+
     }
 
     public void SetLevel(float sliderValue)
     {
         mixer.SetFloat("MasterVol", Mathf.Log10(sliderValue) * 20);
-        PlayerPrefs.SetFloat("MasterVolume", sliderValue);
+        PlayerPrefs.SetFloat("MasterVol", sliderValue);
     }
     public void SetFullscreen(bool isFullscreen)
     {
@@ -62,33 +65,33 @@ public class SettingsMenu : MonoBehaviour
     public void SetTextureQuality(int textureIndex)
     {
         QualitySettings.masterTextureLimit = textureIndex;
-        qualityDropdown.value = 6;
+        qualityDropdown.value = 4;
     }
     public void SetAntiAliasing(int aaIndex)
     {
         QualitySettings.antiAliasing = aaIndex;
-        qualityDropdown.value = 6;
+        qualityDropdown.value = 4;
     }
     public void SetQuality(int qualityIndex)
     {
-        if (qualityIndex != 5) // if the user is not using 
+        if (qualityIndex != 4) // if the user is not using 
                                //any of the presets
             QualitySettings.SetQualityLevel(qualityIndex);
         switch (qualityIndex)
         {
-            case 1: // quality level - low
-                textureDropdown.value = 2;
-                aaDropdown.value = 0;
-                break;
-            case 2: // quality level - medium
+            case 0: // quality level - low
                 textureDropdown.value = 1;
                 aaDropdown.value = 0;
                 break;
-            case 3: // quality level - high
-                textureDropdown.value = 0;
-                aaDropdown.value = 0;
+            case 1: // quality level - medium
+                textureDropdown.value = 1;
+                aaDropdown.value = 1;
                 break;
-            case 4: // quality level - ultra
+            case 2: // quality level - high
+                textureDropdown.value = 0;
+                aaDropdown.value = 2;
+                break;
+            case 3: // quality level - ultra
                 textureDropdown.value = 0;
                 aaDropdown.value = 2;
                 break;
@@ -113,7 +116,7 @@ public class SettingsMenu : MonoBehaviour
                    aaDropdown.value);
         PlayerPrefs.SetInt("FullscreenPreference",
                    Convert.ToInt32(Screen.fullScreen));
-        PlayerPrefs.GetFloat("MasterVolume",
+        PlayerPrefs.SetFloat("VolumePreference",
                    slider.value);
     }
     public void LoadSettings(int currentResolutionIndex)
@@ -155,6 +158,21 @@ public class SettingsMenu : MonoBehaviour
     public void GameScene()
     {
         SceneManager.LoadScene("Game");
+    }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void Update()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "Game")
+        {
+            UI.SetActive(false);
+        }
     }
 
 

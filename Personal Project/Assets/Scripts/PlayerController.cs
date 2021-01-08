@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject Planet;
     public GameObject PlayerPlaceholder;
+    public GameObject Canvas;
 
 
     private float speed = 4;
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     private float gravity = 100;
     private bool OnGround = false;
+    bool Paused = false;
 
 
     float distanceToGround;
@@ -36,6 +39,8 @@ public class PlayerController : MonoBehaviour
 
         // Set the Planet center  point
         Planet = GameObject.Find("Planet Center");
+
+        Canvas.gameObject.SetActive(false);
     }
 
     void Update()
@@ -112,7 +117,17 @@ public class PlayerController : MonoBehaviour
     }
 
 
-   
-
+    void OnCollisionEnter(Collision deathCol)
+    {
+        if (deathCol.collider.tag == "Rock")
+        {
+                Time.timeScale = 0.0f;
+                Canvas.gameObject.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                Paused = true;
+        }
+        
+    }
 
 }

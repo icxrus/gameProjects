@@ -17,7 +17,7 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            {
+            
                 if (Paused == true)
                 {
                     Time.timeScale = 1.0f;
@@ -33,7 +33,7 @@ public class Pause : MonoBehaviour
                     Cursor.lockState = CursorLockMode.None;
                     Paused = true;
                 }
-            }
+            
             
         }
         

@@ -49,6 +49,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191b9a5c9801f26459c341b12910df89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3157905476092625514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897442013012201424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52e842621e87c34592845e608e81030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  pointValue: 2
 --- !u!1001 &2045868830374816567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,6 +118,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114961707740642996, guid: 610afbb40c4385d42aa33adfe3531f0a,
+        type: 3}
+      propertyPath: pointValue
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 610afbb40c4385d42aa33adfe3531f0a, type: 3}
 --- !u!4 &2045868830375211447 stripped
@@ -119,6 +138,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2099457561617868647}
     m_Modifications:
+    - target: {fileID: 114246878791740740, guid: b69137decf0a0374eb97d5ccd45bf767,
+        type: 3}
+      propertyPath: pointValue
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7801366358419791919, guid: b69137decf0a0374eb97d5ccd45bf767,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -256,6 +280,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd5eacae249827643a70d63122a2a386, type: 3}
+--- !u!1 &2897442013012201424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1830801470672767744, guid: dd5eacae249827643a70d63122a2a386,
+    type: 3}
+  m_PrefabInstance: {fileID: 3557166492482274512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2892122298172070006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1837321297082473638, guid: dd5eacae249827643a70d63122a2a386,
@@ -316,6 +346,11 @@ PrefabInstance:
     - target: {fileID: 457174, guid: b2eebec45f249ba4e959a5e0cf96b1de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114490951961564156, guid: b2eebec45f249ba4e959a5e0cf96b1de,
+        type: 3}
+      propertyPath: pointValue
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2eebec45f249ba4e959a5e0cf96b1de, type: 3}
@@ -442,6 +477,11 @@ PrefabInstance:
     - target: {fileID: 400046, guid: 3cf7f489270aac84fb12901330960a5b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433285801401368, guid: 3cf7f489270aac84fb12901330960a5b,
+        type: 3}
+      propertyPath: pointValue
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cf7f489270aac84fb12901330960a5b, type: 3}

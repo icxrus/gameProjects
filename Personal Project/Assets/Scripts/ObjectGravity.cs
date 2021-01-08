@@ -8,6 +8,7 @@ public class ObjectGravity : MonoBehaviour
     //Remember to add box collider and rigidbody!
 
     public GameObject Planet;
+    public int pointValue;
 
 
     float gravity = 10;
@@ -20,12 +21,14 @@ public class ObjectGravity : MonoBehaviour
 
 
     private Rigidbody rb;
+    private ScoreCount scoreCount;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Planet = GameObject.Find("Planet Center");
+        scoreCount = GameObject.Find("Score Text").GetComponent<ScoreCount>();
     }
 
 
@@ -81,6 +84,8 @@ public class ObjectGravity : MonoBehaviour
             Vector3 direction = new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f));
             Vector3 newVelocity = speed * direction;
             transform.GetComponent<Rigidbody>().velocity = newVelocity;
+
+            scoreCount.UpdateScore(pointValue);
 
             // Destroy object after 2 seconds
             Object.Destroy(gameObject, 2.0f);
