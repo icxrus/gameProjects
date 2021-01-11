@@ -22,6 +22,7 @@ public class Pause : MonoBehaviour
                 {
                     Time.timeScale = 1.0f;
                     Canvas.gameObject.SetActive(false);
+                    Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
                     Paused = false;
                 }
@@ -44,6 +45,7 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1.0f;
         Canvas.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 

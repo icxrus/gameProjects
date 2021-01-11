@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 114078595072065938}
   m_Layer: 0
   m_Name: SimpleFarmer_FarmWrangler_Brown
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Planet: {fileID: 0}
+  pointValue: 0
 --- !u!1 &103896
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,13 +8,13 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] enemyPrefabs;
     public GameObject player;
     public int width = 5;
-    public float delay = 5;
+    public float delay = 7;
 
  
     void Start()
     {
-        InvokeRepeating("SpawnRandomAnimal", 7, 4);
-        InvokeRepeating("SpawnEnemy", 9, delay);
+        InvokeRepeating("SpawnRandomAnimal", 5, 4);
+        Invoke("SpawnEnemy", delay);
     }
 
     void SpawnRandomAnimal()
@@ -48,7 +48,12 @@ public class SpawnManager : MonoBehaviour
 
             }
 
-        delay -= 0.25f;
+        Invoke("SpawnEnemy", delay);
+
+        if (delay > 1)
+        {
+            delay -= 0.25f;
+        }
     }
 
 

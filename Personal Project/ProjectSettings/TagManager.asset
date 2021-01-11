@@ -8,6 +8,7 @@ TagManager:
   - Camera
   - Human
   - Rock
+  - Obstacle
   layers:
   - Default
   - TransparentFX

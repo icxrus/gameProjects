@@ -44,6 +44,8 @@ public class SettingsMenu : MonoBehaviour
         slider.value = PlayerPrefs.GetFloat("MasterVol", 0.75f);
         Scene scene = SceneManager.GetActiveScene();
 
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
     }
 
@@ -170,6 +172,10 @@ public class SettingsMenu : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
 
         if (scene.name == "Game")
+        {
+            UI.SetActive(false);
+        }
+        if (scene.name == "Intro Video")
         {
             UI.SetActive(false);
         }

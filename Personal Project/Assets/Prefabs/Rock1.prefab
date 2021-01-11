@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1224415232585754728}
   - component: {fileID: 4345913364942880046}
   - component: {fileID: 114936138454573478}
-  - component: {fileID: 7642247316439745145}
   - component: {fileID: 4154269657831458188}
+  - component: {fileID: 783304050292791012}
   m_Layer: 0
   m_Name: Rock1
   m_TagString: Rock
@@ -111,20 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Planet: {fileID: 0}
   gameOver: 0
---- !u!136 &7642247316439745145
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224415232588173808}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.6151402
-  m_Height: 1.968356
-  m_Direction: 0
-  m_Center: {x: -0.09903222, y: 0.3241768, z: -0.07334685}
 --- !u!114 &4154269657831458188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,3 +123,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191b9a5c9801f26459c341b12910df89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &783304050292791012
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224415232588173808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9332845, y: 1.0599095, z: 1.8940489}
+  m_Center: {x: -0.11656797, y: 0.26896644, z: -0.10770619}

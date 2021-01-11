@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3907419339671100805}
   m_Layer: 0
   m_Name: Tent
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,3 +123,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Planet: {fileID: 0}
+  pointValue: 0

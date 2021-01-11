@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Planet;
     public GameObject PlayerPlaceholder;
     public GameObject Canvas;
+    public AudioClip crash;
 
 
     private float speed = 4;
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private float gravity = 100;
     private bool OnGround = false;
-    bool Paused = false;
+    bool Paused;
 
 
     float distanceToGround;
@@ -36,11 +37,18 @@ public class PlayerController : MonoBehaviour
 
         // Lock cursor to center of screen
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         // Set the Planet center  point
         Planet = GameObject.Find("Planet Center");
 
         Canvas.gameObject.SetActive(false);
+
+        GetComponent<AudioSource>().playOnAwake = false;
+        GetComponent<AudioSource>().clip = crash;
+
+        Paused = false;
+
     }
 
     void Update()
@@ -126,8 +134,14 @@ public class PlayerController : MonoBehaviour
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
                 Paused = true;
+                GetComponent<AudioSource>().Play();
         }
-        
+        if (deathCol.collider.tag == "Obstacle")
+        {
+            GetComponent<AudioSource>().Play();
+        }
     }
+
+
 
 }

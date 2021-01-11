@@ -6,7 +6,7 @@ using TMPro;
 public class ScoreCount : MonoBehaviour
 {
 
-    private int score;
+    public int score;
     public TextMeshProUGUI scoreText;
 
     // Start is called before the first frame update
@@ -20,5 +20,7 @@ public class ScoreCount : MonoBehaviour
     {
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
+        if (score > PlayerPrefs.GetInt("BestScore"))
+            PlayerPrefs.SetInt("BestScore", score);
     }
 }

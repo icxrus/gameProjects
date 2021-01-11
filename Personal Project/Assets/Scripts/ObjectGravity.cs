@@ -10,7 +10,6 @@ public class ObjectGravity : MonoBehaviour
     public GameObject Planet;
     public int pointValue;
 
-
     float gravity = 10;
     bool OnGround = false;
     float speed = 100;
@@ -29,6 +28,7 @@ public class ObjectGravity : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Planet = GameObject.Find("Planet Center");
         scoreCount = GameObject.Find("Score Text").GetComponent<ScoreCount>();
+
     }
 
 
