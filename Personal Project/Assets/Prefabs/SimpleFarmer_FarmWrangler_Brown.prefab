@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 114078595072065938}
   m_Layer: 0
   m_Name: SimpleFarmer_FarmWrangler_Brown
-  m_TagString: Obstacle
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

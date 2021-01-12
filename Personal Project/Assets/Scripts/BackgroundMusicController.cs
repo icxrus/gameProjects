@@ -13,33 +13,19 @@ namespace AudioHelper.AudioControl
         public AudioClipAdvanced[] SourceAssetArray = new AudioClipAdvanced[0];
         public AudioSource SourceComponent;
 
-        /// <summary>
-        /// The currently playing track, represented by an integer.
-        /// </summary>
+        // The currently playing track, represented by an integer.
         private int NowPlaying = 0;
-        /// <summary>
-        /// The ammount of tracks in the playlist or array.
-        /// </summary>
+        // The ammount of tracks in the playlist or array.
         private int Count;
-        /// <summary>
-        /// <para>The track to start with. Default is 0.</para>
-        /// <para>Used with "InitializePlaylist(int TrackNumber)".</para>
-        /// </summary>
+        //The track to start with. Default is 0.
+        //Used with "InitializePlaylist(int TrackNumber)"
         public int StartFrom = 0;
-        /// <summary>
-        /// The total length of the current track.
-        /// </summary>
+        // The total length of the current track.
         private float MaxTime;
-        //private float Time; // Don't use, obsolete.
-
-        /// <summary>
-        /// Tells the thread if playback has already begun.
-        /// </summary>
+        // Tells the thread if playback has already begun.
         private bool PlaylistInitialized = false;
 
-        /// <summary>
-        /// Begins playing from the playlist/array, in order.
-        /// </summary>
+        // Begins playing from the playlist/array, in order.
         public void InitializePlaylist()
         {
             if (SourceComponent.isPlaying)
@@ -59,10 +45,8 @@ namespace AudioHelper.AudioControl
             PlaylistInitialized = true;
         }
 
-        /// <summary>
-        /// Begins playing from the playlist/array, in order.
-        /// </summary>
-        /// <param name="TrackNumber">The song from the array to start with. Default is 0 (first track).</param>
+        // Begins playing from the playlist/array, in order.
+        //The song from the array to start with. Default is 0 (first track).
         public void InitializePlaylist(int TrackNumber)
         {
             if (SourceComponent.isPlaying)
@@ -82,9 +66,7 @@ namespace AudioHelper.AudioControl
             PlaylistInitialized = true;
         }
 
-        /// <summary>
-        /// Checks if the song is over, and begins the next song if it is.
-        /// </summary>
+        // Checks if the song is over, and begins the next song if it is.
         public void Advance()
         {
             if (SourceComponent.loop || NowPlaying == Count) { return; } // Alternatively, inside a loop, use 'break;' to cancel or exit the playlist completely.

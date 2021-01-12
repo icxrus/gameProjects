@@ -17,8 +17,6 @@ public class SceneLoader : MonoBehaviour
         Button btn = menu.GetComponent<Button>();
         btn.onClick.AddListener(ToMenu);
 
-
-
         // if button is pressed return to menu
         void ToMenu() 
         {

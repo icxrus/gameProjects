@@ -6,7 +6,6 @@ public class ObjectGravity : MonoBehaviour
 {
 
     //Remember to add box collider and rigidbody!
-
     public GameObject Planet;
     public int pointValue;
 
@@ -14,28 +13,21 @@ public class ObjectGravity : MonoBehaviour
     bool OnGround = false;
     float speed = 100;
 
-
     float distanceToGround;
     Vector3 Groundnormal;
 
-
     private Rigidbody rb;
     private ScoreCount scoreCount;
-
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Planet = GameObject.Find("Planet Center");
         scoreCount = GameObject.Find("Score Text").GetComponent<ScoreCount>();
-
     }
-
 
     void Update()
     {
-
-
         //GroundControl
 
         RaycastHit hit = new RaycastHit();
@@ -54,12 +46,9 @@ public class ObjectGravity : MonoBehaviour
                 OnGround = false;
             }
 
-
         }
 
-
         //GRAVITY and ROTATION
-
         Vector3 gravDirection = (transform.position - Planet.transform.position).normalized;
 
         if (OnGround == false)
@@ -68,13 +57,9 @@ public class ObjectGravity : MonoBehaviour
 
         }
 
-
         Quaternion toRotation = Quaternion.FromToRotation(transform.up, Groundnormal) * transform.rotation;
         transform.rotation = toRotation;
-
-
     }
-
 
     // Throws the object in a random direction on collision with player
     private void OnCollisionEnter(Collision dataFromCollision)

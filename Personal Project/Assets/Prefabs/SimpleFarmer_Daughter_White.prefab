@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114594078656820792}
   m_Layer: 0
   m_Name: SimpleFarmer_Daughter_White
-  m_TagString: Obstacle
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

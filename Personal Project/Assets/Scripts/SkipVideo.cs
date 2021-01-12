@@ -7,6 +7,7 @@ public class SkipVideo : MonoBehaviour
 {
     private void Update()
     {
+        // Skip with spacebar
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene("Menu");

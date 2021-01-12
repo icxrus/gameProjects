@@ -8,17 +8,13 @@ public class Enemy : MonoBehaviour
     public GameObject Planet;
     public bool gameOver = false;
 
-
     float gravity = 1000000;
     bool OnGround = false;
-
 
     float distanceToGround;
     Vector3 Groundnormal;
 
-
     private Rigidbody rb;
-
 
     void Start()
     {
@@ -26,13 +22,9 @@ public class Enemy : MonoBehaviour
         Planet = GameObject.Find("Planet Center");
     }
 
-
     void Update()
     {
-
-
         //GroundControl
-
         RaycastHit hit = new RaycastHit();
         if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
         {
@@ -48,13 +40,9 @@ public class Enemy : MonoBehaviour
             {
                 OnGround = false;
             }
-
-
         }
 
-
         //GRAVITY and ROTATION
-
         Vector3 gravDirection = (transform.position - Planet.transform.position).normalized;
 
         if (OnGround == false)
@@ -63,11 +51,18 @@ public class Enemy : MonoBehaviour
 
         }
 
-
         Quaternion toRotation = Quaternion.FromToRotation(transform.up, Groundnormal) * transform.rotation;
         transform.rotation = toRotation;
 
+    }
 
+    // Freeze Rocks to ground after hitting it
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Planet")
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        }
     }
 
 }

@@ -7,11 +7,9 @@ using UnityEngine.SceneManagement;
 public class VideoNextScene : MonoBehaviour
 {
     VideoPlayer video;
-    
 
     void Start()
     {
-
 
         video = GetComponent<VideoPlayer>();
         video.Play();
@@ -19,13 +17,10 @@ public class VideoNextScene : MonoBehaviour
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
-
+     
     }
 
-
-
-
+    // Load scene after video end
     void OnMovieEnded(UnityEngine.Video.VideoPlayer vp)
     {
         SceneManager.LoadScene("Menu");

@@ -8,7 +8,7 @@ public class Highscore : MonoBehaviour
 
     public TextMeshProUGUI highScore;
 
-    // Start is called before the first frame update
+    // Highscore system
     void Start()
     {
         highScore.text = "Highscore: " + PlayerPrefs.GetInt("BestScore");

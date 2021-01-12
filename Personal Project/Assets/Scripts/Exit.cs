@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Exit : MonoBehaviour
 {
-
     public static Exit Instance;
 
     void Awake()
@@ -12,6 +11,7 @@ public class Exit : MonoBehaviour
         Instance = this;
     }
 
+    // Exit Game
     public void DoExitGame()
     {
         Application.Quit();

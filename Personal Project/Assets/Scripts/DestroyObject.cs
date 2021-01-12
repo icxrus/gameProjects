@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class DestroyObject : MonoBehaviour
 {
+    Renderer thisRenderer;
 
+    void Start()
+    {
+        thisRenderer = GetComponent<Renderer>();
+    }
 
     void Update()
     {
-        // Destroy the object
-        Destroy(gameObject, 9);
+        // Destroy Object when outside of camera area   
+        if (!thisRenderer.isVisible)
+        {
+
+             Destroy(gameObject, 2f);
+        }
     }
 }

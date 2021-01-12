@@ -5,12 +5,13 @@ using UnityEngine;
 public class Pause : MonoBehaviour
 {
     public GameObject Canvas;
-    bool Paused = false;
+    bool Paused;
 
 
     void Start()
     {
         Canvas.gameObject.SetActive(false);
+        Paused = false;
     }
 
     void Update() // Game Pause system
@@ -46,6 +47,7 @@ public class Pause : MonoBehaviour
         Canvas.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Paused = false;
     }
 
 

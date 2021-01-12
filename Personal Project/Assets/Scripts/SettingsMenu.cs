@@ -49,6 +49,7 @@ public class SettingsMenu : MonoBehaviour
 
     }
 
+    // Settings
     public void SetLevel(float sliderValue)
     {
         mixer.SetFloat("MasterVol", Mathf.Log10(sliderValue) * 20);
@@ -102,11 +103,11 @@ public class SettingsMenu : MonoBehaviour
         qualityDropdown.value = qualityIndex;
     }
 
-    public void ExitGame()
+    public void ExitGame() // Exit game
     {
         Application.Quit();
     }
-    public void SaveSettings()
+    public void SaveSettings() // Player Preferences
     {
         PlayerPrefs.SetInt("QualitySettingPreference",
                    qualityDropdown.value);
@@ -121,7 +122,7 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("VolumePreference",
                    slider.value);
     }
-    public void LoadSettings(int currentResolutionIndex)
+    public void LoadSettings(int currentResolutionIndex) // Load preferences
     {
         if (PlayerPrefs.HasKey("QualitySettingPreference"))
             qualityDropdown.value =
